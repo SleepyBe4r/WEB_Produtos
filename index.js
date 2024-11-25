@@ -370,7 +370,7 @@ app.post("/login",logar);
 
 app.get('/logout', (req, resp) => {
     req.session.destroy(); //eliminar a sessão.
-    resp.redirect('/login');
+    resp.redirect('/login.html');
 });
 
 app.listen(port, host, () => {
