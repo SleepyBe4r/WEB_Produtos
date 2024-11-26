@@ -364,14 +364,14 @@ app.get("/listar_Produto", validarAutenticacao, listar_Produtos);
 app.post("/cadastrar_Produto", validarAutenticacao,cadastrar_Produto);
 
 app.get('/login', (req,resp)=>{
-    resp.redirect("/login.html");
+    resp.redirect("/login");
 });
 
 app.post("/login",logar);
 
 app.get('/logout', (req, resp) => {
     req.session.destroy(); //eliminar a sessão.
-    resp.redirect('/login.html');
+    resp.redirect('/login');
 });
 
 app.listen(port, host, () => {
