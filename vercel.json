@@ -12,7 +12,7 @@
     ],
     "routes": [
       {
-        "src": "pages/public/(.*)",
+        "src": "pages/public/(.+)",
         "dest": "pages/public/$1"
       },
       {

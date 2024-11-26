@@ -33,9 +33,8 @@ app.use(cookieParser());
 //você pode escolher entre duas bibliotecas: QS ou QueryString
 app.use(express.urlencoded({ extended: true }));
 
-// app.use(express.static("./pages/public"));
-// Configurando o diretório estático
-app.use(express.static(path.join(__dirname, '/pages/public')));
+app.use(express.static("pages/public"));
+
 
 
 const host = "localhost";
