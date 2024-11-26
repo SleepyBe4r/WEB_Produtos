@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // app.use(express.static("./pages/public"));
 // Configurando o diretório estático
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/pages/public')));
 
 
 const host = "localhost";
