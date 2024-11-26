@@ -26,7 +26,14 @@ app.use(cookieParser());
 //você pode escolher entre duas bibliotecas: QS ou QueryString
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static("./pages/public"));
+// app.use(express.static("./pages/public"));
+// Servir arquivos estáticos da pasta 'pages/public'
+app.use(express.static(path.join(__dirname, 'pages/public')));
+
+// Rota principal (opcional, para redirecionar para login.html)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'pages/public', 'login.html'));
+});
 
 const host = "localhost";
 const port = 3000;
