@@ -5,6 +5,11 @@ import session from "express-session";
 import cookieParser from "cookie-parser";
 
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Obter o diretório do arquivo atual
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
