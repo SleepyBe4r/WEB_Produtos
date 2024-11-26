@@ -363,25 +363,16 @@ app.get("/listar_Produto", validarAutenticacao, listar_Produtos);
 
 app.post("/cadastrar_Produto", validarAutenticacao,cadastrar_Produto);
 
-// app.get('/login', (req,resp)=>{
-//     resp.redirect("/login.html");
-// });
-
-app.get('/login', (req, resp) => {
-    resp.redirect("/public/login.html");
-});
-
-app.get('/logout', (req, resp) => {
-    req.session.destroy(); // Eliminar a sessão
-    resp.redirect('/public/login.html');
+app.get('/login', (req,resp)=>{
+    resp.redirect("/login.html");
 });
 
 app.post("/login",logar);
 
-// app.get('/logout', (req, resp) => {
-//     req.session.destroy(); //eliminar a sessão.
-//     resp.redirect('/login.html');
-// });
+app.get('/logout', (req, resp) => {
+    req.session.destroy(); //eliminar a sessão.
+    resp.redirect('/login.html');
+});
 
 app.listen(port, host, () => {
     console.log(`Servidor iniciado no endereço http://${host}:${port}`);    
