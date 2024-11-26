@@ -3,6 +3,7 @@ import express from "express";
 import session from "express-session";
 // importando cookie;
 import cookieParser from "cookie-parser";
+
 const app = express();
 
 //configurando a session;
@@ -25,7 +26,7 @@ app.use(cookieParser());
 //você pode escolher entre duas bibliotecas: QS ou QueryString
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static("./pages/public"))
+app.use(express.static("./pages/public"));
 
 const host = "localhost";
 const port = 3000;
