@@ -26,14 +26,7 @@ app.use(cookieParser());
 //você pode escolher entre duas bibliotecas: QS ou QueryString
 app.use(express.urlencoded({ extended: true }));
 
-// app.use(express.static("./pages/public"));
-// Servir arquivos estáticos da pasta 'pages/public'
-app.use(express.static(path.join(__dirname, 'pages/public')));
-
-// Rota principal (opcional, para redirecionar para login.html)
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'pages/public', 'login.html'));
-});
+app.use(express.static("./pages/public"));
 
 const host = "localhost";
 const port = 3000;
@@ -358,7 +351,7 @@ function validarAutenticacao(req, resp, next) {
     if (req.session.usuarioLogado) {
         next();
     } else{
-        resp.redirect("/login");
+        resp.redirect("/login.html");
     }
 }
 
@@ -371,14 +364,14 @@ app.get("/listar_Produto", validarAutenticacao, listar_Produtos);
 app.post("/cadastrar_Produto", validarAutenticacao,cadastrar_Produto);
 
 app.get('/login', (req,resp)=>{
-    resp.redirect("/login");
+    resp.redirect("/login.html");
 });
 
 app.post("/login",logar);
 
 app.get('/logout', (req, resp) => {
     req.session.destroy(); //eliminar a sessão.
-    resp.redirect('/login');
+    resp.redirect('/login.html');
 });
 
 app.listen(port, host, () => {
