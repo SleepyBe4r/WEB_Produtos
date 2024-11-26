@@ -4,13 +4,6 @@ import session from "express-session";
 // importando cookie;
 import cookieParser from "cookie-parser";
 
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-// Obter o diretório do arquivo atual
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 const app = express();
 
 //configurando a session;
@@ -34,8 +27,6 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("pages/public"));
-
-
 
 const host = "localhost";
 const port = 3000;
